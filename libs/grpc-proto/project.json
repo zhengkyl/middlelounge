@@ -20,6 +20,9 @@
     },
     "build": {
       "executor": "nx:run-script",
+      "inputs": ["!{projectRoot}/src/proto"],
+      "_inputs": "! makes it track file changes",
+      "outputs": ["{projectRoot}/src/types/*.pb.ts"],
       "options": {
         "script": "build"
       }
